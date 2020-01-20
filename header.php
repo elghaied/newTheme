@@ -13,7 +13,10 @@
   			<header>
 
   				<div id="logo">
-  				    <img src="<?php echo get_template_directory_uri(); ?>/img/petite-entreprise.png" alt="Logo" width="400" height="100"/>
+  				    
+                      <img src="<?php echo get_template_directory_uri(); ?>/img/petite-entreprise.png" alt="Logo" width="400" height="100"/>
+
+                      <?php echo get_search_form(); ?>
   				</div>
 
   				<!-- <ul id="social">

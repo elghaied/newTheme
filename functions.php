@@ -73,3 +73,27 @@ register_sidebar( array(
     'after_title' => '</h3>'
 ) );
 
+/* Déclaration des CPT (Custom Post Type) */
+function mpe_register_post_types() {
+    $labels = array(
+        'name' => 'Produit',
+        'all_items' => 'Tous les produits',  // affiché dans le sous menu
+        'singular_name' => 'Produit',
+        'add_new_item' => 'Ajouter un produit',
+        'edit_item' => 'Modifier le produit',
+        'menu_name' => 'Boutique'
+    );
+
+	$args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'supports' => array( 'title', 'editor', 'thumbnail' ),
+        'menu_position' => 20, 
+        'menu_icon' => 'dashicons-cart',
+	);
+
+	register_post_type( 'bidule', $args );
+}
+add_action( 'init', 'mpe_register_post_types' );
