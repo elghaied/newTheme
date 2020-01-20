@@ -9,6 +9,6 @@
             </article>
         <?php }
     } else { ?>
-        <h1>Ce produit n'existe pas !</h1>
+        <h1>this taxonomy doesn't exist</h1>
     <?php } ?>
 <?php get_footer(); ?>

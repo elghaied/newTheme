@@ -77,12 +77,12 @@ register_sidebar( array(
 /* Déclaration des CPT (Custom Post Type) */
 function mpe_register_post_types() {
     $labels = array(
-        'name' => 'Produit',
-        'all_items' => 'Tous les produits',  // affiché dans le sous menu
-        'singular_name' => 'Produit',
-        'add_new_item' => 'Ajouter un produit',
-        'edit_item' => 'Modifier le produit',
-        'menu_name' => 'Boutique'
+        'name' => 'Books',
+        'all_items' => 'All books',  // affiché dans le sous menu
+        'singular_name' => 'Books',
+        'add_new_item' => 'add a book',
+        'edit_item' => 'modify the book',
+        'menu_name' => 'Books'
     );
 
 	$args = array(
@@ -92,9 +92,25 @@ function mpe_register_post_types() {
         'has_archive' => true,
         'supports' => array( 'title', 'editor', 'thumbnail' ),
         'menu_position' => 20, 
-        'menu_icon' => 'dashicons-cart',
+        'menu_icon' => 'dashicons-book-alt',
 	);
 
-	register_post_type( 'bidule', $args );
+    register_post_type( 'bidule', $args );
+    
+
+	 $labels = array(
+        'name' => 'Book geners',
+        'new_item_name' => 'name of the new book',
+    	'parent_item' => 'Type of the parent book',
+    );
+    
+    $args = array( 
+        'labels' => $labels,
+        'public' => true, 
+        'show_in_rest' => true,
+        'hierarchical' => true, 
+    );
+
+    register_taxonomy( 'truc', 'bidule', $args );
 }
 add_action( 'init', 'mpe_register_post_types' );
