@@ -1,0 +1,2 @@
+# newTheme
+wordpress theme
