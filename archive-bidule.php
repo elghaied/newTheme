@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 <div id="maincontent">
 
-<h1>this is archive</h1>
+<h1>this is archive bidule</h1>
     <?php if ( have_posts() ) { ?>
         <h1><?php single_cat_title(); ?></h1>
         <?php while ( have_posts() ) {
             the_post(); ?>
-            <?php get_template_part('template-parts/posts-list'); ?>
+            <?php get_template_part('template-parts/posts-list-bidule'); ?>
         <?php }
         // posts_nav_link(' // ', 'Nouveaux articles la classe', 'Vieux articles perraves');
         the_posts_pagination();

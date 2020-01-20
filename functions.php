@@ -17,6 +17,7 @@ add_action( 'wp_enqueue_scripts', 'pe_enqueue_stylesheets' );
 
 /* Ajouter automatiquement le titre du site dans l'en-tête du site */
 add_theme_support( 'title-tag' );
+add_theme_support( 'post-thumbnails' );
 
 /* add new defult size to wordpress */
 add_image_size( 'blog-thumbnail', 200, 200, true);
