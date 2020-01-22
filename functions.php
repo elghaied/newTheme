@@ -109,6 +109,7 @@ function mpe_register_post_types() {
         'public' => true, 
         'show_in_rest' => true,
         'hierarchical' => true, 
+        'meta_box_cb' => false, // to delet the meta box field in the wp admin menu 
     );
 
     register_taxonomy( 'truc', 'bidule', $args );

@@ -672,3 +672,10 @@ textarea{
 		max-width:100%;
 	}
 }
+
+/* The grey star  */
+
+.mystar {
+	color:rgb(172, 169, 169);
+	font-size: 1.2rem;
+}

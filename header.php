@@ -25,7 +25,9 @@
   				    <li class="icon"><a href="#"><img src="./img/youtube.png" alt="Youtube" width="32" height="32"/></a></div>
 </ul> -->
 <?php if ( is_user_logged_in() ) { ?>
-    <?php the_author_posts_link(); ?>  <p>Bonjour</p>
+    <p>  <?php 
+        $current_user = wp_get_current_user();
+        echo 'Bonjour '. $current_user->display_name;?> </p> 
 <?php } else { ?>
     <a href="/wp-login.php" title="Members Area Login" rel="home">Members Area</a>
 <?php } ?> 
