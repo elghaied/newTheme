@@ -14,10 +14,16 @@
 
   				<div id="logo">
   				    
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/petite-entreprise.png" alt="Logo" width="400" height="100"/>
-
-                      <?php echo get_search_form(); ?>
+                  <?php 
+                $image_logo = get_field('mylogo', 'option');
+                $size = 'logo-size'; // (thumbnail, medium, large, full or custom size)
+                if( $image_logo ) {
+                    echo wp_get_attachment_image( $image_logo, $size );
+                } ?>
+                      
   				</div>
+
+                  <?php echo get_search_form(); ?>
 
   				<!-- <ul id="social">
   				    <li class="icon"><a href="#"><img src="./img/facebook.png" alt="Facebook" width="32" height="32"/></a></div>

@@ -21,6 +21,7 @@ add_theme_support( 'post-thumbnails' );
 
 /* add new defult size to wordpress */
 add_image_size( 'blog-thumbnail', 200, 200, true);
+add_image_size( 'logo-size', 400, 100, true);
 /* Déclarer des emplacement de menu */
 register_nav_menus( array(
     'main'      => 'Menu Principal',
@@ -115,3 +116,9 @@ function mpe_register_post_types() {
     register_taxonomy( 'truc', 'bidule', $args );
 }
 add_action( 'init', 'mpe_register_post_types' );
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
