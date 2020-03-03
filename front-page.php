@@ -80,7 +80,7 @@
                <?php } ?>
 
 
-            </div>
+  
                 
                 
                
@@ -116,7 +116,13 @@
 
                 <?php } ?>
                             
-               
+                </div>
+
+                <div class="full">
+                <?php 
+                my_fquery($wp_query);
+                ?>
+                </div>
             </article>
 
         <?php }

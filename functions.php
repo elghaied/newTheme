@@ -122,3 +122,38 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 	
 }
+
+
+// wp query
+
+function my_fquery($wp_query) {
+
+    // 1. on défini ce que l'on veut
+    $args = array(
+    'post_type' => 'post',
+    'category_name' => 'catz',
+    'posts_per_page' => 10,
+);
+
+    // 2. on exécute la query
+    $my_query = new WP_Query($args);
+
+    // 3. on lance la boucle !
+    if($my_query->have_posts()) {
+     while ($my_query->have_posts() ) {
+         $my_query->the_post();
+        ?>
+        <div class="half">
+         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+         <?php the_post_thumbnail('blog-thumbnail', [ 'class' => 'featured']); ?>
+     </a>
+     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"> <?php the_title(); ?> </a>
+        </div>
+<?php
+
+     };
+    };
+
+// 4. On réinitialise à la requête principale (important)
+wp_reset_postdata();
+}
